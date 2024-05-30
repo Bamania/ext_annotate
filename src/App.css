@@ -1,16 +1,60 @@
+.App {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+.text-content {
+  margin-bottom: 20px;
+}
+
 .highlight {
   background-color: yellow; /* Highlight color */
+  cursor: pointer;
 }
 
-.popover-content {
-  padding: 10px;
+.note {
+  background: #f9f9f9;
   border: 1px solid #ddd;
-  background-color: white;
+  padding: 10px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-  width: 200px;
+  position: relative;
 }
 
-textarea {
+.note-input {
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  padding: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.note-input textarea {
   width: 100%;
-  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.note-input button {
+  display: block;
+  margin: 0 auto;
+}
+
+.options {
+  background: white;
+  border: 1px solid #ddd;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+}
+
+.options button {
+  margin-right: 10px;
+}
+
+.delete-note {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: red;
+  color: white;
+  border: none;
+  padding: 2px 5px;
+  cursor: pointer;
 }
