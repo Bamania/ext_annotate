@@ -1,23 +1,25 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
+import Highlighter from 'react-highlight-words';
 import './App.css';
 
 function App() {
+  const [searchWords, setSearchWords] = useState([]);
+
+  const handleMouseUp = () => {
+    const selectedText = window.getSelection().toString().trim();
+    if (selectedText && !searchWords.includes(selectedText)) {
+      setSearchWords([...searchWords, selectedText]);
+    }
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App" onMouseUp={handleMouseUp}>
+      <Highlighter
+        highlightClassName="YourHighlightClass"
+        searchWords={searchWords}
+        autoEscape={true}
+        textToHighlight="The dog is chasing the cat. Or perhaps they're just playing? Select some text to highlight it."
+      />
     </div>
   );
 }
